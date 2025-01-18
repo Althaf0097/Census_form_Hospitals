@@ -4,6 +4,8 @@ set -o errexit
 
 # Install Python dependencies
 pip install --upgrade pip
+pip install --upgrade setuptools wheel
+pip install numpy==1.23.5
 pip install -r requirements.txt
 
 # Create necessary directories
