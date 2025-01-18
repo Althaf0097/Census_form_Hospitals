@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">Health Insurance Census Form</h2>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('submit') }}" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="field_officer" class="form-label">Field Officer Name</label>
+                        <input type="text" class="form-control" id="field_officer" name="field_officer" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="hospital_name" class="form-label">Hospital Name</label>
+                        <input type="text" class="form-control" id="hospital_name" name="hospital_name" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="hospital_id" class="form-label">Hospital ID</label>
+                        <input type="text" class="form-control" id="hospital_id" name="hospital_id" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="case_id" class="form-label">Case ID</label>
+                        <input type="text" class="form-control" id="case_id" name="case_id" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="procedure_id" class="form-label">Procedure ID</label>
+                        <input type="text" class="form-control" id="procedure_id" name="procedure_id" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="pmjay_card" class="form-label">PMJAY Card Number</label>
+                        <input type="text" class="form-control" id="pmjay_card" name="pmjay_card" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="date_admission" class="form-label">Date of Admission</label>
+                        <input type="date" class="form-control" id="date_admission" name="date_admission" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="expenditure" class="form-label">Total Out-of-Pocket Expenditure</label>
+                        <input type="number" step="0.01" class="form-control" id="expenditure" name="expenditure" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="fraud_type" class="form-label">Type of Fraud</label>
+                        <select class="form-control" id="fraud_type" name="fraud_type" required>
+                            <option value="">Select fraud type</option>
+                            <option value="MONEY COLLECTION">MONEY COLLECTION</option>
+                            <option value="FAKE DOCUMENTS">FAKE DOCUMENTS</option>
+                            <option value="IDENTITY THEFT">IDENTITY THEFT</option>
+                            <option value="OTHER">OTHER</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="photo" class="form-label">Upload Photo</label>
+                        <input type="file" class="form-control" id="photo" name="photo" accept="image/*" required>
+                        <small class="text-muted">Supported formats: JPG, PNG, JPEG</small>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
