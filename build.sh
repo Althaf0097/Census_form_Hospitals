@@ -10,6 +10,7 @@ pip install -r requirements.txt
 
 # Create necessary directories
 mkdir -p static/uploads
+chmod -R 755 static/uploads
 
 # Create database
 python << END
